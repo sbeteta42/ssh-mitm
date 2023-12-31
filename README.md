@@ -9,6 +9,8 @@ Cet outil de test d'intrusion permet à un auditeur d'intercepter les connexions
 
 Bien entendu, le client SSH de la victime se plaindra du changement de clé du serveur. Mais comme 99,99999 % du temps, cela est dû à une action légitime (réinstallation du système d'exploitation, modification de la configuration, etc.), la plupart des utilisateurs ignoreront l'avertissement et continueront.
 
+Cet outil est à utiliser dans le Travail Dirigé  MITM-SSH fournit durant la séance : une solution de rmdiation sera proposé durant l'exercice.
+
 ***Remarques:** exécutez uniquement le sshd_mitm modifié dans une VM ou un conteneur ! Des modifications ponctuelles ont été apportées aux sources OpenSSH dans les régions critiques, sans égard à leurs implications en matière de sécurité. Il n'est pas difficile d'imaginer que ces modifications introduisent de graves vulnérabilités.
 
 ## Change Log
