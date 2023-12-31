@@ -3,23 +3,23 @@
 Author: [Joe Testa](https://www.positronsecurity.com/company/) ([@therealjoetesta](https://twitter.com/therealjoetesta))
 
 
-## Overview
+## Introduction
 
-This penetration testing tool allows an auditor to intercept SSH connections.  A patch applied to the OpenSSH v7.5p1 source code causes it to act as a proxy between the victim and their intended SSH server; all plaintext passwords and sessions are logged to disk.
+Cet outil de test d'intrusion permet à un auditeur d'intercepter les connexions SSH. Un correctif appliqué au code source d'OpenSSH v7.5p1 le fait agir comme un proxy entre la victime et son serveur SSH prévu ; tous les mots de passe et sessions en texte clair sont enregistrés sur le disque.
 
-Of course, the victim's SSH client will complain that the server's key has changed.  But because 99.99999% of the time this is caused by a legitimate action (OS re-install, configuration change, etc), many/most users will disregard the warning and continue on.
+Bien entendu, le client SSH de la victime se plaindra du changement de clé du serveur. Mais comme 99,99999 % du temps, cela est dû à une action légitime (réinstallation du système d'exploitation, modification de la configuration, etc.), la plupart des utilisateurs ignoreront l'avertissement et continueront.
 
-**NOTE:** Only run the modified *sshd_mitm* in a VM or container!  Ad-hoc edits were made to the OpenSSH sources in critical regions, with no regard to their security implications.  Its not hard to imagine these edits introduce serious vulnerabilities.
-
+***Remarques:** exécutez uniquement le sshd_mitm modifié dans une VM ou un conteneur ! Des modifications ponctuelles ont été apportées aux sources OpenSSH dans les régions critiques, sans égard à leurs implications en matière de sécurité. Il n'est pas difficile d'imaginer que ces modifications introduisent de graves vulnérabilités.
 
 ## Change Log
 
-* v2.3: ???: Added support for Linux Mint 20 & Ubuntu 20.
-* v2.2: September 16, 2019: Fixed installation on Kali & Linux Mint 19.  Fixed a double-password prompt that occured under certain conditions.  Improved error logging.
-* v2.1: January 4, 2018: Enabled non-interactive command execution, connections to old servers with weak algorithms can now be intercepted, fixed two major bugs which caused AppArmor to kill some connections, and improved error logging.
-* v2.0: September 12, 2017: Added full SFTP support(!) and AppArmor confinement.
-* v1.1: July 6, 2017: Removed root privilege dependencies, added automatic installer, added Kali Linux support, added *JoesAwesomeSSHMITMVictimFinder.py* script to find potential targets on a LAN.
-* v1.0: May 16, 2017: Initial revision.
+* v2.3 : ??? : Ajout de la prise en charge de Linux Mint 20 et Ubuntu 20.
+* v2.2 : 16 septembre 2019 : correction de l'installation sur Kali et Linux Mint 19. Correction d'une invite de double mot de passe qui se produisait dans certaines conditions. Journalisation des erreurs améliorée.
+* v2.1 : 4 janvier 2018 : activation de l'exécution de commandes non interactives, les connexions aux anciens serveurs dotés d'algorithmes faibles peuvent désormais être interceptées, correction de deux bugs majeurs qui entraînaient la suppression de certaines connexions par AppArmor et amélioration de la journalisation des erreurs.
+* v2.0 : 12 septembre 2017 : ajout de la prise en charge complète de SFTP (!) et du confinement AppArmor.
+* v1.1 : 6 juillet 2017 : suppression des dépendances des privilèges root, ajout d'un programme d'installation automatique, ajout de la prise en charge de Kali Linux, ajout du script *JoesAwesomeSSHMITMVictimFinder.py* pour trouver des cibles potentielles sur un réseau local.
+* v1.0 : 16 mai 2017 : révision initiale.
+
 
 
 ## Running The Docker Image
